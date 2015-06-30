@@ -1,0 +1,9 @@
+$Service = Get-Service -Name Spooler
+if ($Service.Status -eq "Running")
+{
+Stop-Service -Name Spooler -Force
+}
+else
+{
+Set-Service -Name Spooler -Status Running
+}
